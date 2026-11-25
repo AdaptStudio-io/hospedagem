@@ -184,6 +184,9 @@ h3{margin:0;font-family:var(--sub);font-weight:800;text-transform:uppercase;lett
 .razao{border-radius:22px;background:var(--cartao-solido);border:1px solid var(--borda);padding:28px 26px 30px;display:grid;gap:12px;align-content:start}
 .razao svg{width:28px;height:28px;stroke:var(--texto);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;margin-bottom:8px}
 .razao p{margin:0;color:var(--leitura);font-size:17px}
+.razoes.quatro{grid-template-columns:repeat(4,minmax(0,1fr))}
+.guia{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:-12px 0 24px}
+.guia p{margin:0;color:var(--leitura);font-size:17px;padding-left:14px;border-left:2px solid rgba(255,255,255,.16)}
 
 /* Pacotes: Nível 0 */
 .pacotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch}
@@ -258,6 +261,7 @@ h3{margin:0;font-family:var(--sub);font-weight:800;text-transform:uppercase;lett
 .rodape nav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
 .rodape small{color:var(--texto-2);font-size:14px}
 
+@media (max-width:1180px){.razoes.quatro{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:980px){
   .comparar{grid-template-columns:minmax(0,1fr)}
   .pacotes{grid-template-columns:minmax(0,1fr);max-width:560px}
@@ -266,7 +270,8 @@ h3{margin:0;font-family:var(--sub);font-weight:800;text-transform:uppercase;lett
   .videos::-webkit-scrollbar{display:none}
   .video{scroll-snap-align:start}
   .videos.um{grid-template-columns:minmax(0,300px);overflow:visible;margin-inline:0;padding-inline:0}
-  .razoes{grid-template-columns:minmax(0,1fr)}
+  .razoes,.razoes.quatro{grid-template-columns:minmax(0,1fr)}
+  .guia{grid-template-columns:minmax(0,1fr);gap:12px;max-width:560px}
 }
 @media (max-width:880px){
   .nav{padding:7px;border-radius:28px}
@@ -309,11 +314,11 @@ h3{margin:0;font-family:var(--sub);font-weight:800;text-transform:uppercase;lett
 </head>
 <body>
 <header class="nav">
-  <nav class="links" aria-label="Seções"><a href="#trabalhos">Trabalhos</a><a href="#clientes">Clientes</a><a href="#pacotes">Pacotes</a></nav>
+  <nav class="links" aria-label="Seções"><a href="#servico">O serviço</a><a href="#clientes">Clientes</a><a href="#pacotes">Pacotes</a></nav>
   <button class="menu" type="button" id="menu" aria-expanded="false" aria-controls="gaveta" aria-label="Abrir menu"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
   <a href="#topo" aria-label="AdaptStudio, voltar ao topo"><img class="logo" src="assets/wordmark-branco.png" alt="Adapt"></a>
   <a class="bt vidro p js-whats" href="#">WhatsApp <span class="seta" aria-hidden="true">→</span></a>
-  <nav class="gaveta" id="gaveta" aria-label="Seções" hidden><a href="#trabalhos">Trabalhos</a><a href="#clientes">Clientes</a><a href="#pacotes">Pacotes</a><a href="#como-funciona">Como funciona</a></nav>
+  <nav class="gaveta" id="gaveta" aria-label="Seções" hidden><a href="#servico">O serviço</a><a href="#clientes">Clientes</a><a href="#pacotes">Pacotes</a><a href="#como-funciona">Como funciona</a><a href="#perguntas">Perguntas</a></nav>
 </header>
 
 <main>
@@ -325,17 +330,17 @@ h3{margin:0;font-family:var(--sub);font-weight:800;text-transform:uppercase;lett
   <div class="cont wrap">
     <div class="texto">
       <h1 class="lock elastico"><span class="t">Reservas</span><span class="s">começam na foto</span></h1>
-      <p class="subt">Foto, drone e vídeo para a sua pousada vender mais diárias</p>
-      <p class="corrido">Fotografamos as categorias de quarto, as áreas comuns e o café da manhã. Tudo sai pronto para <strong>Booking, Airbnb, Google e site.</strong></p>
+      <p class="subt">Fotos, drone e vídeo para a sua pousada ser escolhida no Booking, Airbnb e Instagram</p>
+      <p class="corrido">Somos a AdaptStudio. Em um dia na pousada, produzimos as fotos dos quartos e das áreas comuns, as imagens de drone e os Reels. Em 5 dias você recebe tudo pronto para publicar, <strong>a partir de R$ 690.</strong></p>
       <div class="ctas">
         <a class="bt prim js-whats" href="#">Pedir orçamento <span class="seta" aria-hidden="true">→</span></a>
-        <a class="bt vidro" href="#clientes">Ver trabalhos <span class="seta" aria-hidden="true">↓</span></a>
+        <a class="bt vidro" href="#pacotes">Ver pacotes e preços <span class="seta" aria-hidden="true">↓</span></a>
       </div>
     </div>
     <div class="placar fosco">
       <div><span class="num">R$ 690</span><span class="des">pacote de entrada, com 3 categorias de quarto e áreas comuns</span></div>
       <div><span class="num">Drone</span><span class="des">fotos e vídeo aéreo da pousada, da piscina e da praia próxima</span></div>
-      <div><span class="num">5 dias</span><span class="des">para receber as fotos tratadas, no formato de cada canal</span></div>
+      <div><span class="num">5 dias</span><span class="des">depois da produção, você recebe tudo tratado e pronto para publicar</span></div>
     </div>
   </div>
 </div>
@@ -345,7 +350,7 @@ h3{margin:0;font-family:var(--sub);font-weight:800;text-transform:uppercase;lett
 <section id="trabalhos" aria-labelledby="h-trabalhos">
   <div class="cab">
     <h2 id="h-trabalhos">O que o hóspede vê antes de reservar</h2>
-    <p>Quarto, piscina, café e vista na luz certa. É isso que faz alguém escolher a sua pousada e não a do lado.</p>
+    <p>Quarto, piscina, café e vista na luz certa. É isso que faz o hóspede clicar na sua pousada e não na do lado. Todas as fotos e vídeos desta página são de clientes reais.</p>
   </div>
   <div class="galeria">
 <div data-grupo style="display:contents"><figure class="foto g-f"><button type="button" data-grande="midia/silverton/piscina-silverton-48.webp" aria-label="Ampliar: Piscina de borda infinita no rooftop, com vista para o rio e o mar"><img src="midia/silverton/piscina-silverton-48-p.webp" width="800" height="450" style="--ar:800/450" alt="Piscina de borda infinita no rooftop, com vista para o rio e o mar" loading="lazy" decoding="async"></button></figure>
@@ -365,44 +370,73 @@ h3{margin:0;font-family:var(--sub);font-weight:800;text-transform:uppercase;lett
   </div>
 <div class="abas" role="tablist" aria-label="Clientes"><button class="aba" type="button" role="tab" id="aba-silverton" aria-controls="p-silverton" aria-selected="true" tabindex="0"><b>Silverton Paiva Home Stay</b><span>30 fotos</span></button><button class="aba" type="button" role="tab" id="aba-brisa" aria-controls="p-brisa" aria-selected="false" tabindex="-1"><b>Brisa Porto de Galinhas</b><span>14 fotos · 4 vídeos</span></button><button class="aba" type="button" role="tab" id="aba-mya" aria-controls="p-mya" aria-selected="false" tabindex="-1"><b>MYA Event</b><span>1 vídeo</span></button></div>
 <div class="painel" role="tabpanel" id="p-silverton" aria-labelledby="aba-silverton">
-<p class="intro">Hotel com piscina de borda infinita no rooftop. Quartos, área da piscina, café da manhã e retratos da equipe.</p>
+<p class="intro">Hotel com piscina de borda infinita no rooftop. Fotografamos as categorias de quarto, o rooftop com a vista do rio e do mar, o café da manhã e a equipe da recepção.</p>
 <div class="grupo" data-grupo><h3>Quartos<small>9</small></h3><div class="fotos"><figure class="foto"><button type="button" data-grande="midia/silverton/quarto-2004.webp" aria-label="Ampliar: Quarto do Silverton"><img src="midia/silverton/quarto-2004-p.webp" width="800" height="533" style="--ar:800/533" alt="Quarto do Silverton" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/silverton/quarto-n-503-horizontal-1.webp" aria-label="Ampliar: Quarto do Silverton"><img src="midia/silverton/quarto-n-503-horizontal-1-p.webp" width="800" height="533" style="--ar:800/533" alt="Quarto do Silverton" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/silverton/quarto-n-503-horizontal-6.webp" aria-label="Ampliar: Quarto do Silverton"><img src="midia/silverton/quarto-n-503-horizontal-6-p.webp" width="800" height="533" style="--ar:800/533" alt="Quarto do Silverton" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/silverton/quarto-n-503-horizontal-7.webp" aria-label="Ampliar: Quarto do Silverton"><img src="midia/silverton/quarto-n-503-horizontal-7-p.webp" width="800" height="533" style="--ar:800/533" alt="Quarto do Silverton" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/silverton/quarto-n-503-horizontal-8.webp" aria-label="Ampliar: Quarto do Silverton"><img src="midia/silverton/quarto-n-503-horizontal-8-p.webp" width="800" height="533" style="--ar:800/533" alt="Quarto do Silverton" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/silverton/quarto-n-503-horizontal-16.webp" aria-label="Ampliar: Quarto do Silverton"><img src="midia/silverton/quarto-n-503-horizontal-16-p.webp" width="800" height="533" style="--ar:800/533" alt="Quarto do Silverton" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/silverton/quarto-n-503-horizontal-23.webp" aria-label="Ampliar: Quarto do Silverton"><img src="midia/silverton/quarto-n-503-horizontal-23-p.webp" width="800" height="533" style="--ar:800/533" alt="Quarto do Silverton" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/silverton/quarto-n-503-vertical-27.webp" aria-label="Ampliar: Quarto do Silverton"><img src="midia/silverton/quarto-n-503-vertical-27-p.webp" width="534" height="800" style="--ar:534/800" alt="Quarto do Silverton" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/silverton/quartos-silverton-6.webp" aria-label="Ampliar: Quarto do Silverton"><img src="midia/silverton/quartos-silverton-6-p.webp" width="533" height="800" style="--ar:533/800" alt="Quarto do Silverton" loading="lazy" decoding="async"></button></figure></div></div>
 <div class="grupo" data-grupo><h3>Piscina e rooftop<small>7</small></h3><div class="fotos"><figure class="foto"><button type="button" data-grande="midia/silverton/piscina-silverton-8.webp" aria-label="Ampliar: Piscina no rooftop do Silverton"><img src="midia/silverton/piscina-silverton-8-p.webp" width="800" height="533" style="--ar:800/533" alt="Piscina no rooftop do Silverton" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/silverton/piscina-silverton-17.webp" aria-label="Ampliar: Piscina no rooftop do Silverton"><img src="midia/silverton/piscina-silverton-17-p.webp" width="800" height="450" style="--ar:800/450" alt="Piscina no rooftop do Silverton" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/silverton/piscina-silverton-31.webp" aria-label="Ampliar: Piscina no rooftop do Silverton"><img src="midia/silverton/piscina-silverton-31-p.webp" width="800" height="450" style="--ar:800/450" alt="Piscina no rooftop do Silverton" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/silverton/piscina-silverton-35.webp" aria-label="Ampliar: Piscina no rooftop do Silverton"><img src="midia/silverton/piscina-silverton-35-p.webp" width="800" height="450" style="--ar:800/450" alt="Piscina no rooftop do Silverton" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/silverton/piscina-silverton-39.webp" aria-label="Ampliar: Piscina no rooftop do Silverton"><img src="midia/silverton/piscina-silverton-39-p.webp" width="800" height="450" style="--ar:800/450" alt="Piscina no rooftop do Silverton" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/silverton/piscina-silverton-48.webp" aria-label="Ampliar: Piscina no rooftop do Silverton"><img src="midia/silverton/piscina-silverton-48-p.webp" width="800" height="450" style="--ar:800/450" alt="Piscina no rooftop do Silverton" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/silverton/piscina-silverton-52.webp" aria-label="Ampliar: Piscina no rooftop do Silverton"><img src="midia/silverton/piscina-silverton-52-p.webp" width="800" height="450" style="--ar:800/450" alt="Piscina no rooftop do Silverton" loading="lazy" decoding="async"></button></figure></div></div>
 <div class="grupo" data-grupo><h3>Café da manhã<small>9</small></h3><div class="fotos"><figure class="foto"><button type="button" data-grande="midia/silverton/cafe-da-manha-silverton-1.webp" aria-label="Ampliar: Café da manhã do Silverton"><img src="midia/silverton/cafe-da-manha-silverton-1-p.webp" width="800" height="533" style="--ar:800/533" alt="Café da manhã do Silverton" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/silverton/cafe-da-manha-silverton-2.webp" aria-label="Ampliar: Café da manhã do Silverton"><img src="midia/silverton/cafe-da-manha-silverton-2-p.webp" width="800" height="533" style="--ar:800/533" alt="Café da manhã do Silverton" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/silverton/cafe-da-manha-silverton-3.webp" aria-label="Ampliar: Café da manhã do Silverton"><img src="midia/silverton/cafe-da-manha-silverton-3-p.webp" width="800" height="533" style="--ar:800/533" alt="Café da manhã do Silverton" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/silverton/cafe-da-manha-silverton-5.webp" aria-label="Ampliar: Café da manhã do Silverton"><img src="midia/silverton/cafe-da-manha-silverton-5-p.webp" width="800" height="533" style="--ar:800/533" alt="Café da manhã do Silverton" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/silverton/cafe-da-manha-silverton-8.webp" aria-label="Ampliar: Café da manhã do Silverton"><img src="midia/silverton/cafe-da-manha-silverton-8-p.webp" width="800" height="533" style="--ar:800/533" alt="Café da manhã do Silverton" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/silverton/cafe-da-manha-silverton-9.webp" aria-label="Ampliar: Café da manhã do Silverton"><img src="midia/silverton/cafe-da-manha-silverton-9-p.webp" width="800" height="533" style="--ar:800/533" alt="Café da manhã do Silverton" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/silverton/cafe-da-manha-silverton-10.webp" aria-label="Ampliar: Café da manhã do Silverton"><img src="midia/silverton/cafe-da-manha-silverton-10-p.webp" width="800" height="533" style="--ar:800/533" alt="Café da manhã do Silverton" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/silverton/cafe-da-manha-silverton-11.webp" aria-label="Ampliar: Café da manhã do Silverton"><img src="midia/silverton/cafe-da-manha-silverton-11-p.webp" width="800" height="533" style="--ar:800/533" alt="Café da manhã do Silverton" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/silverton/cafe-da-manha-silverton-19.webp" aria-label="Ampliar: Café da manhã do Silverton"><img src="midia/silverton/cafe-da-manha-silverton-19-p.webp" width="800" height="533" style="--ar:800/533" alt="Café da manhã do Silverton" loading="lazy" decoding="async"></button></figure></div></div>
 <div class="grupo" data-grupo><h3>Equipe<small>5</small></h3><div class="fotos"><figure class="foto"><button type="button" data-grande="midia/silverton/colaborador-silverton-1.webp" aria-label="Ampliar: Equipe do Silverton"><img src="midia/silverton/colaborador-silverton-1-p.webp" width="800" height="533" style="--ar:800/533" alt="Equipe do Silverton" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/silverton/colaborador-silverton-3.webp" aria-label="Ampliar: Equipe do Silverton"><img src="midia/silverton/colaborador-silverton-3-p.webp" width="533" height="800" style="--ar:533/800" alt="Equipe do Silverton" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/silverton/colaborador-silverton-4.webp" aria-label="Ampliar: Equipe do Silverton"><img src="midia/silverton/colaborador-silverton-4-p.webp" width="533" height="800" style="--ar:533/800" alt="Equipe do Silverton" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/silverton/colaborador-silverton-5.webp" aria-label="Ampliar: Equipe do Silverton"><img src="midia/silverton/colaborador-silverton-5-p.webp" width="533" height="800" style="--ar:533/800" alt="Equipe do Silverton" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/silverton/colaborador-silverton-6.webp" aria-label="Ampliar: Equipe do Silverton"><img src="midia/silverton/colaborador-silverton-6-p.webp" width="800" height="533" style="--ar:800/533" alt="Equipe do Silverton" loading="lazy" decoding="async"></button></figure></div></div>
 </div>
 <div class="painel" role="tabpanel" id="p-brisa" aria-labelledby="aba-brisa" hidden>
-<p class="intro">Apartamentos de temporada. Reels verticais com drone e todos os ambientes: quarto, sala, cozinha e varanda.</p>
+<p class="intro">Apartamentos de temporada. Fotos de todos os ambientes e 4 Reels com drone que mostram o apartamento e o que existe em volta dele.</p>
 <div class="grupo"><h3>Vídeos<small>4</small></h3><div class="videos"><figure class="video"><video src="midia/brisa/video-1.mp4" poster="midia/brisa/video-1.jpg" controls playsinline preload="none" aria-label="Vídeo vertical, Brisa Porto de Galinhas"></video></figure><figure class="video"><video src="midia/brisa/video-2.mp4" poster="midia/brisa/video-2.jpg" controls playsinline preload="none" aria-label="Vídeo vertical, Brisa Porto de Galinhas"></video></figure><figure class="video"><video src="midia/brisa/video-3.mp4" poster="midia/brisa/video-3.jpg" controls playsinline preload="none" aria-label="Vídeo vertical, Brisa Porto de Galinhas"></video></figure><figure class="video"><video src="midia/brisa/video-4.mp4" poster="midia/brisa/video-4.jpg" controls playsinline preload="none" aria-label="Vídeo vertical, Brisa Porto de Galinhas"></video></figure></div></div>
 <div class="grupo" data-grupo><h3>Quartos<small>7</small></h3><div class="fotos"><figure class="foto"><button type="button" data-grande="midia/brisa/banheiro-2.webp" aria-label="Ampliar: Quarto do Brisa"><img src="midia/brisa/banheiro-2-p.webp" width="800" height="533" style="--ar:800/533" alt="Quarto do Brisa" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/brisa/quartp-1-imagem-1.webp" aria-label="Ampliar: Quarto do Brisa"><img src="midia/brisa/quartp-1-imagem-1-p.webp" width="800" height="531" style="--ar:800/531" alt="Quarto do Brisa" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/brisa/quartp-1-imagem-2.webp" aria-label="Ampliar: Quarto do Brisa"><img src="midia/brisa/quartp-1-imagem-2-p.webp" width="800" height="531" style="--ar:800/531" alt="Quarto do Brisa" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/brisa/quartp-1-imagem-3.webp" aria-label="Ampliar: Quarto do Brisa"><img src="midia/brisa/quartp-1-imagem-3-p.webp" width="800" height="531" style="--ar:800/531" alt="Quarto do Brisa" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/brisa/quartp-1-imagem-4.webp" aria-label="Ampliar: Quarto do Brisa"><img src="midia/brisa/quartp-1-imagem-4-p.webp" width="800" height="531" style="--ar:800/531" alt="Quarto do Brisa" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/brisa/quartp-1-imagem-5.webp" aria-label="Ampliar: Quarto do Brisa"><img src="midia/brisa/quartp-1-imagem-5-p.webp" width="800" height="531" style="--ar:800/531" alt="Quarto do Brisa" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/brisa/quartp-1-imagem-6.webp" aria-label="Ampliar: Quarto do Brisa"><img src="midia/brisa/quartp-1-imagem-6-p.webp" width="800" height="533" style="--ar:800/533" alt="Quarto do Brisa" loading="lazy" decoding="async"></button></figure></div></div>
 <div class="grupo" data-grupo><h3>Sala e cozinha<small>4</small></h3><div class="fotos"><figure class="foto"><button type="button" data-grande="midia/brisa/sala-cozinha-1.webp" aria-label="Ampliar: Sala e cozinha do Brisa"><img src="midia/brisa/sala-cozinha-1-p.webp" width="800" height="531" style="--ar:800/531" alt="Sala e cozinha do Brisa" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/brisa/sala-cozinha-3.webp" aria-label="Ampliar: Sala e cozinha do Brisa"><img src="midia/brisa/sala-cozinha-3-p.webp" width="800" height="531" style="--ar:800/531" alt="Sala e cozinha do Brisa" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/brisa/sala-cozinha-5.webp" aria-label="Ampliar: Sala e cozinha do Brisa"><img src="midia/brisa/sala-cozinha-5-p.webp" width="800" height="533" style="--ar:800/533" alt="Sala e cozinha do Brisa" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/brisa/sala-cozinha-8.webp" aria-label="Ampliar: Sala e cozinha do Brisa"><img src="midia/brisa/sala-cozinha-8-p.webp" width="800" height="533" style="--ar:800/533" alt="Sala e cozinha do Brisa" loading="lazy" decoding="async"></button></figure></div></div>
 <div class="grupo" data-grupo><h3>Varanda e circulação<small>3</small></h3><div class="fotos"><figure class="foto"><button type="button" data-grande="midia/brisa/externo-2.webp" aria-label="Ampliar: Varanda com rede do Brisa"><img src="midia/brisa/externo-2-p.webp" width="800" height="531" style="--ar:800/531" alt="Varanda com rede do Brisa" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/brisa/externo-3.webp" aria-label="Ampliar: Varanda com rede do Brisa"><img src="midia/brisa/externo-3-p.webp" width="800" height="531" style="--ar:800/531" alt="Varanda com rede do Brisa" loading="lazy" decoding="async"></button></figure><figure class="foto"><button type="button" data-grande="midia/brisa/externo-5.webp" aria-label="Ampliar: Varanda com rede do Brisa"><img src="midia/brisa/externo-5-p.webp" width="800" height="533" style="--ar:800/533" alt="Varanda com rede do Brisa" loading="lazy" decoding="async"></button></figure></div></div>
 </div>
 <div class="painel" role="tabpanel" id="p-mya" aria-labelledby="aba-mya" hidden>
-<p class="intro">Cobertura de evento em vídeo vertical, da montagem à cerimônia.</p>
+<p class="intro">Evento registrado em vídeo vertical, da montagem à cerimônia.</p>
 <div class="grupo"><h3>Vídeos<small>1</small></h3><div class="videos um"><figure class="video"><video src="midia/mya/video-1.mp4" poster="midia/mya/video-1.jpg" controls playsinline preload="none" aria-label="Vídeo vertical, MYA Event"></video></figure></div></div>
 </div>
 </section>
 
+<section id="servico" aria-labelledby="h-servico">
+  <div class="cab">
+    <h2 id="h-servico">O que a gente faz pela sua pousada</h2>
+    <p>Uma produção completa de imagem para quem vende diária pela internet. Um dia de trabalho na pousada e você sai com material para anunciar o ano inteiro.</p>
+  </div>
+  <div class="razoes quatro">
+    <article class="razao">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 24V12M28 24v-6H4"/><path d="M4 18h24v-3a3 3 0 0 0-3-3H14v6"/><circle cx="9" cy="14.5" r="2"/><path d="M3 27h26"/></svg>
+      <h3>Fotos de cada quarto</h3>
+      <p>Cada categoria fotografada por inteiro: cama, banheiro, vista e detalhes. O hóspede entende exatamente o que está reservando.</p>
+    </article>
+    <article class="razao">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 22V12.5L16 5l12 7.5V22"/><path d="M4 22h24"/><path d="M8 22v-5.5h7V22M18 22v-5.5h6V22"/><path d="M3 27c4.3 0 4.3-2 8.6-2s4.3 2 8.6 2 4.3-2 8.6-2"/></svg>
+      <h3>Áreas comuns e café</h3>
+      <p>Fachada, recepção, piscina e café da manhã. É onde a sua pousada se diferencia da concorrência, e o hóspede precisa ver isso.</p>
+    </article>
+    <article class="razao">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="12" y="13" width="8" height="6" rx="2"/><path d="M12 14l-4.5-4.5M20 14l4.5-4.5M12 18l-4.5 4.5M20 18l4.5 4.5"/><path d="M3.5 9.5h8M20.5 9.5h8M3.5 22.5h8M20.5 22.5h8"/></svg>
+      <h3>Imagens com drone</h3>
+      <p>A pousada vista de cima, com a piscina e a praia próxima. Mostra a localização melhor do que qualquer texto no anúncio.</p>
+    </article>
+    <article class="razao">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="3.5" y="7" width="15" height="10.5" rx="2.5"/><rect x="21" y="4.5" width="7.5" height="13.5" rx="2"/><path d="M9.5 10v4.5l3.5-2.25z"/><path d="M3 27c4.3 0 4.3-2 8.6-2s4.3 2 8.6 2 4.3-2 8.6-2"/></svg>
+      <h3>Reels e vídeo</h3>
+      <p>Vídeos verticais para o Instagram e, no pacote Completo, um vídeo de apresentação para o site e o Booking.</p>
+    </article>
+  </div>
+</section>
+
 <section aria-labelledby="h-razoes">
   <div class="cab">
-    <h2 id="h-razoes">Feito para vender diária</h2>
+    <h2 id="h-razoes">Por que isso traz reserva</h2>
   </div>
   <div class="razoes">
     <article class="razao">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 22V12.5L16 5l12 7.5V22"/><path d="M4 22h24"/><path d="M8 22v-5.5h7V22M18 22v-5.5h6V22"/><path d="M3 27c4.3 0 4.3-2 8.6-2s4.3 2 8.6 2 4.3-2 8.6-2"/></svg>
-      <h3>Cada categoria vende sozinha</h3>
-      <p>O hóspede compara os quartos pelas fotos. Cada categoria ganha o próprio conjunto: cama, banheiro, vista e detalhes.</p>
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 16s5-8 13-8 13 8 13 8-5 8-13 8S3 16 3 16z"/><circle cx="16" cy="16" r="4"/></svg>
+      <h3>A foto é o primeiro filtro</h3>
+      <p>No Booking, no Airbnb e no Google, o hóspede vê as fotos antes do preço e da descrição. Quem tem a foto melhor recebe o clique.</p>
     </article>
     <article class="razao">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="14" r="5"/><path d="M16 3.5v2.5M16 22v2.5M5.5 14H3M29 14h-2.5M8.6 6.6l1.7 1.7M21.7 19.7l1.7 1.7M23.4 6.6l-1.7 1.7M10.3 19.7l-1.7 1.7"/><path d="M3 28c4.3 0 4.3-2 8.6-2s4.3 2 8.6 2 4.3-2 8.6-2"/></svg>
-      <h3>Luz certa em cada ambiente</h3>
-      <p>O dia é roteirizado pelo sol: quartos com luz da manhã, piscina e fachada no fim da tarde. Sua equipe só deixa os ambientes prontos.</p>
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="11"/><path d="M19.5 12c-.6-1.3-1.9-2-3.5-2-2 0-3.5 1.1-3.5 2.8 0 4 7 2.2 7 6.2 0 1.8-1.6 3-3.6 3-1.7 0-3.1-.8-3.7-2.2M16 8v2M16 22v2"/></svg>
+      <h3>Quarto bem mostrado vende pelo valor certo</h3>
+      <p>Com luz, cor e enquadramento certos, o quarto aparece como ele é. O hóspede entende o que está pagando e não procura a opção mais barata.</p>
     </article>
     <article class="razao">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="3.5" y="7" width="15" height="10.5" rx="2.5"/><rect x="21" y="4.5" width="7.5" height="13.5" rx="2"/><path d="M3 27c4.3 0 4.3-2 8.6-2s4.3 2 8.6 2 4.3-2 8.6-2"/></svg>
-      <h3>Um material, todos os canais</h3>
-      <p>Fotos no formato de Booking, Airbnb, Google e site. Reels verticais para o Instagram. Tudo numa pasta organizada por categoria.</p>
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 7h22v14H13l-6 5v-5H5z"/><path d="M10 12.5h12M10 16h8"/></svg>
+      <h3>Menos dúvida no WhatsApp</h3>
+      <p>Cada categoria com as próprias fotos já responde o que o hóspede perguntaria: tamanho da cama, banheiro, vista. Ele chega decidido.</p>
     </article>
   </div>
 </section>
@@ -410,7 +444,12 @@ h3{margin:0;font-family:var(--sub);font-weight:800;text-transform:uppercase;lett
 <section id="pacotes" aria-labelledby="h-pacotes">
   <div class="cab">
     <h2 id="h-pacotes">Pacotes</h2>
-    <p>O preço é por pacote e já inclui as categorias de quarto, as áreas comuns e o tratamento das fotos.</p>
+    <p>O preço é fechado por pacote e já inclui as categorias de quarto, as áreas comuns e o tratamento das fotos. Você não paga por foto.</p>
+  </div>
+  <div class="guia">
+    <p><b>Vitrine</b> se você quer arrumar o anúncio no Booking e no Airbnb.</p>
+    <p><b>Destaque</b> se você também quer imagens de drone e aparecer no Instagram.</p>
+    <p><b>Completo</b> se a pousada tem até 8 categorias ou você quer vídeo para o site.</p>
   </div>
   <div class="pacotes">
     <article class="pacote">
@@ -479,21 +518,42 @@ h3{margin:0;font-family:var(--sub);font-weight:800;text-transform:uppercase;lett
   <div class="passos" id="passos">
     <div class="trilho" aria-hidden="true"><i></i></div>
     <ol>
-      <li><span class="k">1</span><div><h3>Conversa no WhatsApp</h3><p>Você conta quantas categorias de quarto tem e o que a pousada tem de melhor. Com 50% no Pix, a data fica marcada pela melhor luz.</p></div></li>
-      <li><span class="k">2</span><div><h3>Dia de produção</h3><p>Fotografamos quarto a quarto, as áreas comuns, o café e as imagens com drone, e gravamos os Reels no mesmo dia. Sem atrapalhar a rotina dos hóspedes.</p></div></li>
-      <li><span class="k">3</span><div><h3>Entrega pronta para publicar</h3><p>Em 5 dias (7 no Completo), fotos tratadas e vídeos no formato de cada canal, numa pasta separada por categoria. O restante é pago na entrega.</p></div></li>
+      <li><span class="k">1</span><div><h3>Conversa no WhatsApp</h3><p>Você conta quantas categorias de quarto tem e o que a pousada tem de melhor. A gente indica o pacote certo e manda o orçamento fechado.</p></div></li>
+      <li><span class="k">2</span><div><h3>Data marcada</h3><p>Com 50% no Pix, a data fica reservada. Antes do dia, combinamos o que deixar pronto: quartos arrumados, enxoval trocado e café montado.</p></div></li>
+      <li><span class="k">3</span><div><h3>Dia de produção</h3><p>Fotografamos quarto a quarto conforme eles ficam livres, as áreas comuns na melhor luz, o drone e os Reels. A rotina dos hóspedes segue normal.</p></div></li>
+      <li><span class="k">4</span><div><h3>Entrega pronta para publicar</h3><p>Em 5 dias (7 no Completo), você recebe as fotos tratadas e os vídeos separados por categoria, no formato de cada canal. O restante é pago na entrega.</p></div></li>
     </ol>
   </div>
 </section>
 
-<section aria-labelledby="h-perguntas">
+<section id="perguntas" aria-labelledby="h-perguntas">
   <div class="cab">
     <h2 id="h-perguntas">Perguntas</h2>
   </div>
   <div class="perguntas">
     <details>
+      <summary>Preciso fechar a pousada no dia?<span class="mais" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 1v12M1 7h12"/></svg></span></summary>
+      <p>Não. Fotografamos quarto a quarto conforme eles ficam livres, e as áreas comuns nos horários de menos movimento. Os hóspedes seguem a rotina normal.</p>
+    </details>
+    <details>
+      <summary>Minha pousada é simples. Vale a pena?<span class="mais" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 1v12M1 7h12"/></svg></span></summary>
+      <p>Vale. A foto não muda o quarto, ela mostra o quarto do jeito certo: limpo, iluminado e com o tamanho real. Quarto simples bem fotografado vende mais do que quarto bom mal fotografado.</p>
+    </details>
+    <details>
       <summary>O que já está incluído no preço?<span class="mais" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 1v12M1 7h12"/></svg></span></summary>
-      <p>As categorias de quarto do pacote, as áreas comuns e o tratamento das fotos. Você não paga por foto.</p>
+      <p>As categorias de quarto do pacote, as áreas comuns e o tratamento de todas as fotos. O preço é fechado: você não paga por foto.</p>
+    </details>
+    <details>
+      <summary>Em que formato eu recebo?<span class="mais" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 1v12M1 7h12"/></svg></span></summary>
+      <p>Fotos tratadas nos formatos de Booking, Airbnb, Google e site, separadas em pastas por categoria. Reels verticais para o Instagram e, no Completo, um vídeo horizontal de 1 a 2 minutos para o site e o Booking.</p>
+    </details>
+    <details>
+      <summary>Em quanto tempo recebo?<span class="mais" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 1v12M1 7h12"/></svg></span></summary>
+      <p>Em 5 dias depois da produção no Vitrine e no Destaque, e em 7 dias no Completo.</p>
+    </details>
+    <details>
+      <summary>Como é o pagamento?<span class="mais" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 1v12M1 7h12"/></svg></span></summary>
+      <p>50% no Pix para reservar a data e 50% na entrega.</p>
     </details>
     <details>
       <summary>Posso começar com menos e crescer depois?<span class="mais" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 1v12M1 7h12"/></svg></span></summary>
@@ -503,21 +563,13 @@ h3{margin:0;font-family:var(--sub);font-weight:800;text-transform:uppercase;lett
       <summary>Vocês atendem a minha região?<span class="mais" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 1v12M1 7h12"/></svg></span></summary>
       <p>Sim. O deslocamento para mais longe é combinado no orçamento, antes de fechar.</p>
     </details>
-    <details>
-      <summary>Como é o pagamento?<span class="mais" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 1v12M1 7h12"/></svg></span></summary>
-      <p>50% no Pix para marcar a data e 50% na entrega.</p>
-    </details>
-    <details>
-      <summary>Em quanto tempo recebo?<span class="mais" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 1v12M1 7h12"/></svg></span></summary>
-      <p>Em 5 dias no Vitrine e no Destaque, e em 7 dias no Completo.</p>
-    </details>
   </div>
 </section>
 
 <div class="fim grao">
   <div class="cartao-fim fosco">
-    <h2>Vamos fotografar a sua pousada</h2>
-    <p>Mande no WhatsApp quantas categorias de quarto você tem e receba o orçamento.</p>
+    <h2>Gostou? Responda no WhatsApp</h2>
+    <p>Se o Lucas passou na sua pousada, é com ele que você vai falar. Mande o nome da pousada e quantas categorias de quarto ela tem, e a gente responde com o pacote certo e o orçamento fechado.</p>
     <a class="bt prim js-whats" href="#">Pedir orçamento no WhatsApp <span class="seta" aria-hidden="true">→</span></a>
   </div>
 </div>
@@ -552,7 +604,7 @@ var calmo=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matc
 // Links de WhatsApp com mensagem pronta, citando o pacote quando o botão é de um pacote.
 document.querySelectorAll('.js-whats').forEach(function(a){
   var p=a.getAttribute('data-pacote');
-  var msg=p?'Olá! Tenho interesse no pacote '+p+' para a minha pousada.':'Olá! Quero um orçamento de fotos e vídeos para a minha pousada.';
+  var msg=p?'Olá, Lucas! Vi o site da AdaptStudio e tenho interesse no pacote '+p+' para a minha pousada.':'Olá, Lucas! Vi o site da AdaptStudio e quero um orçamento para a minha pousada.';
   a.href='https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(msg);
   a.target='_blank'; a.rel='noopener';
 });
